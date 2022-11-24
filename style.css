@@ -1,0 +1,58 @@
+.card-login {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translate(-50%, 50%) !important;
+}
+
+body {
+    position: relative;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgb(0 0 0 / .55), rgb(0 0 0 / .4)), url(https://blog.consumer.com.br/wp-content/uploads/2020/09/o-que-%C3%A9-fast-food.1.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+
+}
+
+header {
+    z-index: 9000;
+}
+
+.card {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.login-bg {
+    background-image: url(https://img.freepik.com/vetores-gratis/ingredientes-para-pizza-sem-costura_1176-269.jpg?w=740&t=st=1668732157~exp=1668732757~hmac=516c7412f718b248f71c19152a56fdc2cf2482e9949b157d1761437e986c6fef);
+    background-position: center;
+    background-size: cover;
+}
+
+.banner-container {
+    position: relative;
+}
+
+.text-content {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 100%);
+}
+
+main {
+    z-index: 1000;
+}
+
+.nav-link {
+    font-size: 20px;
+}
+
+@media screen and (max-width:400px) {
+    .text-content {
+        transform: translate(-50%, 40%);
+    }
+}
