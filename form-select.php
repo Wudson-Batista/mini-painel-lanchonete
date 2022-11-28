@@ -1,3 +1,6 @@
+<?php
+include('./protect.php')
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -29,17 +32,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                            <a class="nav-link" aria-current="page" href="./index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./form-insert.html">Cadastrar Cliente</a>
+                            <a class="nav-link" href="./form-insert.php">Cadastrar Cliente</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Pesquisar Cliente</a>
+                            <a class="nav-link active" href="./form-select.php">Pesquisar Cliente</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-danger rounded-pill px-4">Sair</button>
+                    <form class="d-flex justify-content-center gap-3 align-items-center">
+                        <p class="text-white m-0 fs-5">
+                            <?php
+                        echo $_SESSION['user'];
+                        ?>
+                        </p>
+                        <a href="./logout.php" class="btn btn-danger rounded-pill px-4">Sair</a>
                     </form>
                 </div>
             </div>
@@ -134,7 +142,8 @@
 
                     <div class="form-element w-100 d-flex justify-content-between row text-center">
                         <div class="col d-flex justify-content-center">
-                            <button id="action_deletar" name="action_deletar" class="btn text-danger mt-2 d-flex flex-column justify-content-center p-2" disabled>
+                            <button id="action_deletar" name="action_deletar"
+                                class="btn text-danger mt-2 d-flex flex-column justify-content-center p-2" disabled>
                                 <span class="mx-auto"><i class="fas fa-trash-alt fs-2"></i></span>
                                 <span>Excluir</span>
                             </button>
@@ -181,6 +190,8 @@
     <script src="./js/jquery.min.js"></script>
     <script src="./js/resize.js"></script>
     <script src="./js/request-select.js"></script>
+    <script src="./js/jquery-mask/jquery.mask.min.js"></script>
+    <script src="./js/mask.js"></script>
 
 </body>
 
