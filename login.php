@@ -2,18 +2,21 @@
 
 include_once('./connection.php');
 
+$pwd = $_POST['pwd'];
+$user = $_POST['user'];
+
+// echo json_encode($pwd);
+
 if (isset($_POST['user']) || isset($_POST['pwd'])) {
 
-
-
     if (strlen($_POST['user']) == 0) {
-        echo "Preencha o campo Usuario!";
+        echo json_encode("Preencha o campo Usuario!");
     } else if (strlen($_POST['pwd']) == 0) {
-        echo "Preencha o campo de Senha!";
+        echo json_encode("Preencha o campo de Senha!");
     } else {
 
-        $user = mysqli_real_escape_string($link, $_POST['user']);
-        $senha = mysqli_real_escape_string($link, $_POST['pwd']);
+        $user = mysqli_real_escape_string($link, $user);
+        $senha = mysqli_real_escape_string($link, $pwd);
 
         $sql = "select * from users where user = '$user' AND senha = '$senha'";
 
@@ -23,18 +26,18 @@ if (isset($_POST['user']) || isset($_POST['pwd'])) {
 
         if ($quantidade == 1) {
             $usuario = mysqli_fetch_assoc($query);
-            
+
             // cria sessão
             if (!isset($_SESSION)) {
                 session_start();
             }
-            
+
             $_SESSION['id'] = $usuario['id'];
             $_SESSION['user'] = $usuario['user'];
-            
-            header("Location: ./index.php");
+
+            echo json_encode("Sucesso");
         } else {
-            echo "Falha ao logar! Email ou senha incorretos";
+            echo json_encode("Falha ao logar! Email ou senha incorretos");
         }
     }
 }
