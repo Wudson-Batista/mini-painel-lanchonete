@@ -2,6 +2,12 @@
 
 include_once('./connection.php');
 
+header('Access-Control-Allow-Origin: http://localhost/aula-php/lanchonete/login.html');
+
+header('Access-Control-Allow-Methods: GET, POST');
+
+header("Access-Control-Allow-Headers: X-Requested-With");
+
 $pwd = $_POST['pwd'];
 $user = $_POST['user'];
 

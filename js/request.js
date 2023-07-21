@@ -1,14 +1,4 @@
 $(() => {
-
-    // $.ajax({
-    //     type: "get",
-    //     url: `http://localhost/aula-php/lanchonete/form-insert.html?nome_cadastro=${nome_cadastro}&email_cadastro=${email_cadastro}&ero_cadastro=${numero_cadastro}&uf_cadastro=${uf_cadastro}&cep_cadastro=${cep_cadastro}&rua_cadastro=${rua_cadastro}&bairro_cadastro=${bairro_cadastro}&cidade_cadastro=${cidade_cadastro}&action_cadastrar=&`,
-    //     dataType: "xml",
-    //     success: function (response) {
-    //         console.log(response.tes)
-    //     }
-    // });
-
     const clearFields = () => {
         $('[name=nome_cadastro]').val("");
         $('[name=telefone_cadastro]').val("");
