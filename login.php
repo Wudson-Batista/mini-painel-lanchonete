@@ -2,7 +2,7 @@
 
 include_once('./connection.php');
 
-header('Access-Control-Allow-Origin: http://localhost/aula-php/lanchonete/login.html');
+header('Access-Control-Allow-Origin: http://localhost/aula-php/lanchonete/login.js');
 
 header('Access-Control-Allow-Methods: GET, POST');
 

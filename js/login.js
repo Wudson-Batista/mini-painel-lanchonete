@@ -12,6 +12,7 @@ $(() => {
         $.ajax({
             type: "post",
             url: "http://localhost/aula-php/lanchonete/login.php",
+            cors: false ,
             data: {
                 user: $('#user').val(),
                 pwd: $('#pwd').val(),
